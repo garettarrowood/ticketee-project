@@ -15,6 +15,22 @@ class UsersController < ApplicationController
   end
 
   def show
+  	@user = User.find(params[:id])
+  end
+
+  def edit
+		@user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:notice] = "Profile has been updated."
+      redirect_to projects_path
+    else
+      flash[:alert] = "Profiled has not been updated."
+      render "edit"
+    end
   end
 
   private
@@ -22,5 +38,5 @@ class UsersController < ApplicationController
   	def user_params
   		params.require(:user).permit(:name, :password, :password_confirmation)
   	end
-  	
+
 end
