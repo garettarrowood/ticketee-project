@@ -12,7 +12,7 @@ feature "Profile page" do
 end
 
 feature "Editing users" do
-	scenario "Updating a project" do
+	scenario "Updating a profile" do
 		user = FactoryGirl.create(:user)
 
 		visit user_path(user)

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # before_action :require_signin!, only: [:update]
   def new
   	@user = User.new
   end
@@ -7,6 +8,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
 
   	if @user.save
+      session[:user_id] = @user.id
   		flash[:notice] = "You have signed up successfully."
   		redirect_to projects_path
   	else
@@ -25,6 +27,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      session[:user_id] = @user.id
       flash[:notice] = "Profile has been updated."
       redirect_to projects_path
     else
