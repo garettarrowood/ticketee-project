@@ -21,7 +21,7 @@
 
 <nav>
   <% if current_user %>
-    Signed in as <%= current_user.email %>
+    Signed in as <%= current_user.name %>
     <% admins_only do %>
       <%= link_to "Admin", admin_root_path %>
     <% end %>
