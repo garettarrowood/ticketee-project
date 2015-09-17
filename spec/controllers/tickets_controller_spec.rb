@@ -11,7 +11,7 @@ describe TicketsController do
   		get :show, id: ticket.id, project_id: project.id
 
   		expect(response).to redirect_to(root_path)
-  		expect(flash[:alert]).to eql("The project your were looking for could not be found.")
+  		expect(flash[:alert]).to eq("The project your were looking for could not be found.")
   	end
 
   	context "with permission to view the project" do
@@ -23,12 +23,12 @@ describe TicketsController do
   		def cannot_create_tickets!
   			response.should redirect_to(project)
   			message = "You cannot create tickets on this project."
-  			flash[:alert].should eql(message)
+  			flash[:alert].should eq(message)
   		end
 
   		def cannot_update_tickets!
   			expect(response).to redirect_to(project)
-  			expect(flash[:alert]).to eql("You cannot edit tickets on this project.")
+  			expect(flash[:alert]).to eq("You cannot edit tickets on this project.")
   		end
 
   		it "cannot begin to create a ticket" do
@@ -49,6 +49,14 @@ describe TicketsController do
   		it "cannot update a ticket without permission" do
   			put :update, { project_id: project.id, id: ticket.id, ticket: {} }
   			cannot_update_tickets!
+  		end
+
+  		it "cannot delete a ticket without permission" do
+  			delete :destroy, { project_id: project.id, id: ticket.id }
+
+  			expect(response).to redirect_to(project)
+  			message = "You cannot delete tickets from this project."
+  			expect(flash[:alert]).to eq(message)
   		end
    	end
   end
