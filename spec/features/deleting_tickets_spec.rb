@@ -16,7 +16,7 @@ feature "Deleting tickets" do
 	end
 
 	scenario "Deleting a ticket" do
-		click_link "Delete"
+		click_link "Delete Ticket"
 
 		expect(page).to have_content("Ticket has been DESTROYED!!!")
 		expect(page.current_url).to eq(project_url(project))
