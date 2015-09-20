@@ -28,7 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'cancan', '~> 1.6.10'
 
-gem 'carrierwave', '~> 0.9.0'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
