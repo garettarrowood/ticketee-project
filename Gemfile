@@ -28,8 +28,11 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'cancan', '~> 1.6.10'
 
+<<<<<<< HEAD
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
+=======
+>>>>>>> parent of 6358e57... Add the ability to attach a file to a ticket
 # Use Unicorn as the app server
 # gem 'unicorn'
 

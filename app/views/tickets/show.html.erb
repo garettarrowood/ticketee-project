@@ -1,4 +1,5 @@
 <div id="ticket">
+<<<<<<< HEAD
 	<div id="author">Created by <%= @ticket.user.email %></div>
 	<% if @ticket.assets.present? %>
 	  <h3>Attached Files</h3>
@@ -15,6 +16,9 @@
 	    <% end %>
 	  </div>
 	<% end %>
+=======
+	<span id="author">Created by <%= @ticket.user.email %></span>
+>>>>>>> parent of 6358e57... Add the ability to attach a file to a ticket
 	<h2><%= @ticket.title %></h2>
 	<%= simple_format(@ticket.description) %>
 </div>

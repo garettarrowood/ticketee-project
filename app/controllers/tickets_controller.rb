@@ -83,7 +83,11 @@ class TicketsController < ApplicationController
 		end
 
 		def ticket_params
+<<<<<<< HEAD
 			params.require(:ticket).permit(:title, :description, assets_attributes: [:asset])
+=======
+			params.require(:ticket).permit(:title, :description)
+>>>>>>> parent of 6358e57... Add the ability to attach a file to a ticket
 		end
 
 end

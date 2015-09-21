@@ -43,6 +43,7 @@ feature "Creating Tickets" do
 		expect(page).to have_content("Description is too short")
 	end
 
+<<<<<<< HEAD
 	scenario "with attachments" do
 		fill_in "Title", with: "Add documentaion for blink tag"
 		fill_in "Description", with: "The blink tag has a speed attribute"
@@ -62,3 +63,6 @@ feature "Creating Tickets" do
 end
 
 
+=======
+end
+>>>>>>> parent of 6358e57... Add the ability to attach a file to a ticket

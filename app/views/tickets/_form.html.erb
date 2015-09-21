@@ -1,4 +1,4 @@
-<%= form_for [@project, @ticket], html: { multipart: true } do |f| %>
+<%= form_for [@project, @ticket] do |f| %>
 
 	<% if @ticket.errors.any? %>
 		<div id="error_explanation">
@@ -21,6 +21,7 @@
 	  <%= f.label :description %><br>
 	  <%= f.text_field :description %>
 	</p>
+<<<<<<< HEAD
 
   <% number = 0 %>
   <%= f.fields_for :assets do |asset| %>
@@ -29,6 +30,8 @@
       <%= asset.file_field :asset %>
     </p>
   <% end %>
+=======
+>>>>>>> parent of 6358e57... Add the ability to attach a file to a ticket
 	
 	<%= f.submit %>
 
